@@ -8,7 +8,6 @@ const localStrategy = require('passport-local');
 const methodOverride = require('method-override');
 const flash = require('connect-flash');
 const app = express();
-const port = 3000;
 
 const Campground = require('./models/campground');
 const Comment = require('./models/comment');
@@ -62,4 +61,5 @@ app.use(indexRoutes);
 app.use('/campgrounds', campgroundRoutes);
 app.use('/campgrounds/:id/comments', commentRoutes);
 
+const port = process.env.PORT || 8000;
 app.listen(port, () => console.log('Server has started'));
