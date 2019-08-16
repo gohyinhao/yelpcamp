@@ -25,7 +25,7 @@ mongoose.connect('mongodb+srv://admin:password123%21%40%23@gettingstarted-df6bi.
 .then(() => {
   console.log('DB Connected!');
 }).catch(error => {
-  console.log('ERROR:', error.message);
+  console.log('DATABASE ERROR:', error.message);
 });
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(`${__dirname}/public`));
