@@ -21,7 +21,13 @@ const indexRoutes = require('./routes/index');
 const seedDB = require('./seeds');
 // seedDB();
 
-mongoose.connect('mongodb://localhost:27017/yelpCampDB', { useNewUrlParser: true });
+// mongoose.connect('mongodb://localhost:27017/yelpCampDB', { useNewUrlParser: true });
+mongoose.connect('mongodb+srv://admin:password123%21%40%23@gettingstarted-df6bi.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true })
+.then(() => {
+  console.log('DB Connected!');
+}).catch(error => {
+  console.log('ERROR:', error.message);
+});
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(`${__dirname}/public`));
 app.use(methodOverride('_method'));
